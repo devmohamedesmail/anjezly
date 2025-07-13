@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "singularName": "task",
+    "pluralName": "tasks",
+    "displayName": "task"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "on_site",
+        "remote"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "budget": {
+      "type": "decimal"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "task_status": {
+      "type": "enumeration",
+      "enum": [
+        "open",
+        "in_progress",
+        "completed"
+      ]
+    },
+    "assistant_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "tasks"
+    },
+    "client_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "task"
+    }
+  }
+}
