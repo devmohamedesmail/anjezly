@@ -52,6 +52,18 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "task"
+    },
+    "task_types": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::task-type.task-type",
+      "mappedBy": "tasks"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "tasks"
     }
   }
 }

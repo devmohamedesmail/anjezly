@@ -10,10 +10,12 @@
     "incremental": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "noEmitOnError": true,
+    "noEmitOnError": false,
     "noImplicitThis": true,
     "outDir": "dist",
-    "rootDir": "."
+    "rootDir": ".",
+    "typeRoots": ["./types", "./node_modules/@types"],
+    "types": []
   },
   "include": [
     // Include root files
@@ -23,7 +25,9 @@
     // Include all js files
     "./**/*.js",
     // Force the JSON files in the src folder to be included
-    "src/**/*.json"
+    "src/**/*.json",
+    // Include type declarations
+    "types/**/*.d.ts"
   ],
 
   "exclude": [
@@ -32,6 +36,8 @@
     "dist/",
     ".cache/",
     ".tmp/",
+    "**/*generated*",
+    "**/*.generated.*",
 
     // Do not include admin files in the server compilation
     "src/admin/",

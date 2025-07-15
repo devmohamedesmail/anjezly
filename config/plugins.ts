@@ -1,7 +1,7 @@
 // export default () => ({});
 
-module.exports = ({env}) => ({
-   upload: {
+module.exports = ({ env }) => ({
+  upload: {
     config: {
       provider: 'cloudinary',
       providerOptions: {
@@ -10,10 +10,10 @@ module.exports = ({env}) => ({
         api_secret: env('CLOUDINARY_SECRET'),
         secure: true,
       },
-     
+
     },
   },
-   'cloudinary-media-library': {
+  'cloudinary-media-library': {
     enabled: true,
     config: {
       cloudName: env('CLOUDINARY_NAME'),
@@ -21,5 +21,16 @@ module.exports = ({env}) => ({
       encryptionKey: env('CLOUDINARY_SECRET')
     },
   },
+
+
+
+
+ 
+
+
+
+
+
+
 });
 

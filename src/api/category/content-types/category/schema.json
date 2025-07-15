@@ -31,6 +31,18 @@
     },
     "title_ar": {
       "type": "string"
+    },
+    "tasks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::task.task",
+      "mappedBy": "category"
+    },
+    "gigs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::gig.gig",
+      "mappedBy": "category"
     }
   }
 }
